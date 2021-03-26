@@ -3,15 +3,14 @@ import { Client } from 'pg';
 
 class DBController {
 
-
   async create(request: Request, response: Response) {
     const dataInicial = new Date().getTime();
     const client = new Client({
       host: 'localhost',
       port: 5432,
       database: 'teste',
-      password: 'w996509518',
-      user: 'admin'
+      password: 'SENHA',
+      user: 'USER'
     });
 
     await client.connect();

@@ -10,8 +10,8 @@ class PhotoController {
       host: 'localhost',
       port: 5432,
       database: 'teste',
-      password: 'w996509518',
-      user: 'admin'
+      password: 'SENHA',
+      user: 'USER'
     });
 
     await client.connect();
