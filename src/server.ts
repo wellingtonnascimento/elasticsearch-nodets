@@ -32,8 +32,7 @@ app.post('/db/create', DBController.create);
 app.post('/photos/create', PhotoController.create);
 app.get('/photos/findAll', PhotoController.findAll);
 app.get('/photos/findById/:id', PhotoController.findById);
-
-
+app.get('/photos/createPhoto', PhotoController.createPhoto);
 
 
 app.listen(3333, () => console.log('Running'));

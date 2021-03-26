@@ -53,6 +53,24 @@ class PhotoController {
       index: 'photos',
       q: `id:${id}`
     });
+    return response.json(data.hits.hits)
+  }
+
+  async createPhoto(request: Request, response: Response) {
+    const photo = {
+      "albumId": null,
+      "id": 89896,
+      "title": "Teste well",
+      "url": "https://via.placeholder.com/600/22e355",
+      "thumbnailUrl": "https://via.placeholder.com/150/22e355"
+    }
+
+    const data = await getClient().index({
+      index: 'photos',
+      type: 'type_photos',
+      body: photo
+    });
+
     return response.json(data)
   }
 
