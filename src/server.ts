@@ -34,5 +34,7 @@ app.get('/photos/findAll', PhotoController.findAll);
 app.get('/photos/findById/:id', PhotoController.findById);
 app.get('/photos/createPhoto', PhotoController.createPhoto);
 
+app.get('/photos/findByQuery', PhotoController.findByQuery);
+
 
 app.listen(3333, () => console.log('Running'));

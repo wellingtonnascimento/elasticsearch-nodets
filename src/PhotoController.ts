@@ -74,6 +74,20 @@ class PhotoController {
     return response.json(data)
   }
 
+  async findByQuery(request: Request, response: Response) {
+    const data = await getClient().search({
+      body: {
+        query: {
+          match: {
+            "title.keyword": 'non cumque rerum adipisci quis ut deleniti'
+          }
+        }
+      }
+    });
+
+    return response.json(data)
+  }
+
 }
 
 export default new PhotoController;
