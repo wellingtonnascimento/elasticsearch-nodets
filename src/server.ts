@@ -28,9 +28,10 @@ app.get('/', async (request: Request, response: Response) => {
 })
 
 
-app.get('/db/create', DBController.create)
-app.get('/photos/create', PhotoController.create)
-
+app.post('/db/create', DBController.create);
+app.post('/photos/create', PhotoController.create);
+app.get('/photos/findAll', PhotoController.findAll);
+app.get('/photos/findById/:id', PhotoController.findById);
 
 
 

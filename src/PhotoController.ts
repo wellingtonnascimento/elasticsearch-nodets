@@ -33,6 +33,29 @@ class PhotoController {
     return response.json({ message: 'Index ok!' })
   }
 
+  async findAll(request: Request, response: Response) {
+    const dataInicial = new Date().getTime();
+    const data = await getClient().search({
+      index: 'photos',
+      size: 6000
+    });
+    const dataFinal = new Date().getTime();
+
+    console.log('O resultado do elasticsearch foi ', (dataFinal - dataInicial))
+
+    return response.json(data);
+  }
+
+  async findById(request: Request, response: Response) {
+    const { id } = request.params;
+
+    const data = await getClient().search({
+      index: 'photos',
+      q: `id:${id}`
+    });
+    return response.json(data)
+  }
+
 }
 
 export default new PhotoController;
