@@ -28,7 +28,8 @@ app.get('/', async (request: Request, response: Response) => {
 })
 
 
-
+app.get('/db/create', DBController.create)
+app.get('/photos/create', PhotoController.create)
 
 
 
